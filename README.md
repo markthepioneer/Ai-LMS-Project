@@ -2,6 +2,22 @@
 
 A comprehensive AI-powered platform for managing all aspects of life including finances, health, tasks, investments, reminders, emails, and life balance.
 
+## Features
+
+- **Finance Module**: Track transactions, analyze spending patterns, create budgets, receive budget recommendations, and manage auto-save and auto-invest features.
+
+- **Health Module**: Monitor sleep, exercise, meals, stress, and run health experiments to track what works for you.
+
+- **Task Management**: Organize tasks with automatic scheduling, smart prioritization, and delegation features.
+
+- **Portfolio Manager**: Track investments, analyze portfolio allocation, and receive investment recommendations.
+
+- **Memory Assistant**: Manage reminders, events, contacts, birthdays, gift ideas, and receive personalized news briefings.
+
+- **Email and Call Handler**: Auto-categorize communications, draft email responses, and transcribe calls.
+
+- **Life Balancer**: Track balance across different life areas, manage goals, schedule "me time", and predict burnout risk.
+
 ## Project Structure
 
 ```
@@ -17,81 +33,83 @@ ai-lms/
 │   ├── health_module.py           # Health tracking and analytics
 │   ├── task_module.py             # Task management and scheduling
 │   ├── portfolio_module.py        # Investment portfolio management
-│   ├── memory_module.py           # Reminder and memory assistant
-│   ├── email_module.py            # Email and communication handling
-│   ├── life_balancer_module.py    # Life balance and goal tracking
 │   │
-│   ├── ai_engine/
+│   ├── ai_engine/                 # AI-powered analysis and recommendations
 │   │   ├── __init__.py
-│   │   ├── finance_ai.py          # AI for financial analysis and recommendations
-│   │   ├── health_ai.py           # Health pattern analysis and recommendations
-│   │   ├── task_ai.py             # Task optimization and scheduling AI
-│   │   ├── portfolio_ai.py        # Investment analysis and recommendations
-│   │   ├── email_ai.py            # Email classification and response generation
-│   │   ├── life_balance_ai.py     # Life balance analysis and recommendations
-│   │   └── common.py              # Shared AI utilities
+│   │   ├── common.py              # Shared AI utilities
+│   │   ├── finance_ai.py          # Financial analysis and recommendations
+│   │   └── ... (more AI modules)
 │   │
-│   ├── integrations/
+│   ├── integrations/              # External service integrations
 │       ├── __init__.py
-│       ├── calendar_service.py    # Calendar API integration
-│       ├── email_service.py       # Email provider integration
 │       ├── market_service.py      # Financial market data integration
-│       ├── notification_service.py # Push notifications and alerts
-│       └── voice_service.py       # Voice and call processing services
+│       └── ... (more integration services)
 │
-├── tests/
-│   ├── __init__.py
-│   ├── test_finance.py
-│   ├── test_health.py
-│   ├── test_tasks.py
-│   ├── test_portfolio.py
-│   ├── test_memory.py
-│   ├── test_email.py
-│   └── test_life_balancer.py
+├── tests/                         # Unit and integration tests
 │
-├── frontend/                     # Optional frontend application
-│   ├── public/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   ├── App.js
-│   │   └── index.js
-│   ├── package.json
-│   └── README.md
+├── frontend/                      # Frontend application (to be implemented)
 │
-├── .env.example                  # Environment variables template
-├── .gitignore                    # Git ignore file
-├── requirements.txt              # Python dependencies
-└── docker-compose.yml           # Docker configuration for deployment
+├── .env.example                   # Environment variables template
+├── .gitignore                     # Git ignore file
+├── requirements.txt               # Python dependencies
+├── Dockerfile                     # Docker configuration for container builds
+└── docker-compose.yml            # Docker configuration for deployment
 ```
-
-## Modules
-
-### Finance Module
-Tracks transactions, budgets, analyzes spending patterns, provides budget recommendations, and manages auto-save and auto-invest features.
-
-### Health Module
-Monitors sleep, exercise, meals, stress, and supports health experiments to track what works for you.
-
-### Task Management Module
-Handles tasks and meetings, schedules your day optimally, and enables task delegation.
-
-### Portfolio Manager
-Manages investments, tracks performance, analyzes your portfolio, and provides investment recommendations.
-
-### Memory Assistant
-Manages reminders, events, contacts, birthdays, gift ideas, and provides personalized news briefings.
-
-### Email and Call Handler
-Auto-drafts email replies, categorizes communications, generates new emails, creates templates, and transcribes calls.
-
-### Life Balancer
-Tracks balance across different life areas, manages goals and rewards, schedules "me time", and predicts burnout risk.
 
 ## Installation and Setup
 
-Instructions on how to set up and deploy the application will be provided soon.
+### Local Development
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/markthepioneer/Ai-LMS-Project.git
+   cd Ai-LMS-Project
+   ```
+
+2. Create and activate a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Set up environment variables:
+   ```bash
+   cp .env.example .env
+   # Edit .env with your configuration values
+   ```
+
+5. Run the application:
+   ```bash
+   uvicorn app.main:app --reload
+   ```
+
+6. Access the API at `http://localhost:8000` and the API documentation at `http://localhost:8000/docs`
+
+### Docker Deployment
+
+1. Build and start the containers:
+   ```bash
+   docker-compose up -d
+   ```
+
+2. Access the API at `http://localhost:80` and the API documentation at `http://localhost:80/docs`
+
+## API Documentation
+
+The API is built with FastAPI and includes automatic documentation:
+
+- Swagger UI: `/docs`
+- ReDoc: `/redoc`
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request or open an issue for any improvements or bug fixes.
 
 ## License
+
 This project is open-source and available under the MIT License.
